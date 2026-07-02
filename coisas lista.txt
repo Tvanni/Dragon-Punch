@@ -1,0 +1,15 @@
+input manager
+
+importar animações do footsies
+
+inimigo vermelho e azul
+
+função de golpe que pega o input e atualiza o player state, e cria hitboxes (game objects com dados relevantes)
+
+timer, drawtext no meio da tela em impact
+
+nome do jogador e do inimigo em papyrus
+
+atualizar GDD
+
+trailer com justin wong zoneando criança de jax e ken brasileiro, tocando Chopin - Nocturne op.9 No.2
