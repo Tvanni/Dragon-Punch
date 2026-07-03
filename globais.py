@@ -14,16 +14,6 @@ fundo_jogo = GameImage("AkumaUpscale.png")
 fundo_jogo.set_position(-416, -420)
 
 scene: list[GameImage] = [None]
-global nivel
-nivel = 0
-
-
-player_state: list[Animation] = [None]
-player_posição = [(LARGURA_JANELA/2) - 100, ALTURA_JANELA - 200]
-
-player_actionable = [True]
-flag = [False]
-buffer = [False]
 
 def set_position_center(eu, x_recebido=(LARGURA_JANELA/2), y_recebido=0):
     ##Posição Relativa, aceita input traduzido para Y sendo a parte inferior da tela,
