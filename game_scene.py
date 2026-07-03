@@ -14,3 +14,11 @@ def scene_level_1():
         nivel[0] = 1
     if input_light or input_medium or input_heavy:
         scene[0] = fundo_jogo
+
+def scene_level_2():
+    if esc:
+        scene[0] = fundo_menu
+        nivel[0] = 1
+    if input_light or input_medium or input_heavy:
+        nivel[0] = 2
+        scene[0] = fundo_jogo
