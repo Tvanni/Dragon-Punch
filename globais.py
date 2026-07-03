@@ -8,10 +8,16 @@ LARGURA_JANELA, ALTURA_JANELA = 720, 480
 janela = Window(LARGURA_JANELA,ALTURA_JANELA,"DRAGON PUNCH!")
 
 fundo_menu = GameImage("Start1.png")
+fundo_lvl1 = GameImage("TelaVermelho.png")
+fundo_lvl2 = GameImage("TelaAzul.png")
 fundo_jogo = GameImage("AkumaUpscale.png")
 fundo_jogo.set_position(-416, -420)
 
 scene: list[GameImage] = [None]
+global nivel
+nivel = 0
+
+
 player_state: list[Animation] = [None]
 player_posição = [(LARGURA_JANELA/2) - 100, ALTURA_JANELA - 200]
 

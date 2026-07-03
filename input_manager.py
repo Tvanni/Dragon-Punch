@@ -17,24 +17,22 @@ def player_input() -> None:
 
     global input_right
     input_right = Keyboard().key_pressed(pygame.K_d)
-
     global input_left
     input_left = Keyboard().key_pressed(pygame.K_a)
-
     global input_down
     input_down = Keyboard().key_pressed(pygame.K_s)
-
     global input_up
     input_up = Keyboard().key_pressed(pygame.K_w)
 
     global input_light
     input_light = Keyboard().key_down(pygame.K_j)
-
     global input_medium
     input_medium = Keyboard().key_down(pygame.K_k)
-
     global input_heavy
     input_heavy = Keyboard().key_down(pygame.K_l)
+
+    global input_dash
+    input_dash = Keyboard().key_pressed(pygame.K_SPACE)
     
     global input_x
     input_x = Keyboard().key_pressed(pygame.K_x)
