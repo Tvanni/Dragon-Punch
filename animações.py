@@ -13,7 +13,8 @@ player_animation = [
     Animation("Assets_DP/Down.png", 1, True), #9
     Animation("Assets_DP/Damage.png", 24, False), #10
     Animation("Assets_DP/Block.png", 12, False), #11
-    Animation("Assets_DP/Block_Stun.png", 1, True) #12
+    Animation("Assets_DP/Block_Stun.png", 1, True), #12
+    Animation("Assets_DP/Dash.png", 30, False) #13
 ]
 
 class AnimationEnum():
@@ -34,6 +35,7 @@ class AnimationEnum():
     DAMAGE = 10
     BLOCK = 11
     BLOCK_STUN = 12
+    DASH = 13
 
     def __init__(self):
         self.state = 0
