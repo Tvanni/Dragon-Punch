@@ -26,15 +26,21 @@ class Animation(GameImage):
     Gerencia sequências de frames (Spritesheets) com controle de tempo
     baseado em Delta Time e suporte a Câmera.
     """
-    def __init__(self, caminho_imagem, total_frames, loop=True):
+    def __init__(self, caminho_imagem, columns, rows, loop=True):
         super().__init__(caminho_imagem)
         
-        self.total_frames = total_frames
+        self.total_frames = columns*rows
         self.loop = loop
+        self.colunas = columns
+        self.fileiras = rows
         
         # Ajusta a largura para o tamanho de UM frame
-        self.width = self.width / total_frames
+        self.width = self.width / columns
+        self.height = self.height / rows
         
+        self.fileira_atual = 0
+        self.coluna_atual = 0
+
         self.frame_atual = 0
         self.rodando = True
         
@@ -69,13 +75,26 @@ class Animation(GameImage):
 
         if self.tempo_acumulado >= self.tempo_por_frame:
             self.frame_atual += 1
+            if self.colunas > 1 and self.fileiras > 1:
+                self.coluna_atual += 1
+                if self.coluna_atual >= self.colunas:
+                    self.coluna_atual = 0
+                    self.fileira_atual += 1
+                    if self.fileira_atual >= self.fileiras:
+                        self.fileira_atual = 0
+
+
             self.tempo_acumulado = 0
 
             if self.frame_atual >= self.total_frames:
                 if self.loop:
                     self.frame_atual = 0
+                    self.coluna_atual = 0
+                    self.fileira_atual = 0
                 else:
                     self.frame_atual = self.total_frames - 1
+                    self.coluna_atual = self.colunas -1
+                    self.fileira_atual = self.fileiras -1
                     self.rodando = False
 
     def draw(self):
@@ -88,7 +107,7 @@ class Animation(GameImage):
 
         # Define o retângulo de corte na Spritesheet
         area_corte = pygame.Rect(
-            self.frame_atual * self.width, 0,
+            self.coluna_atual * self.width, self.fileira_atual * self.height,
             self.width, self.height
         )
         

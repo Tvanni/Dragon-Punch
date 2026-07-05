@@ -1,21 +1,27 @@
 from globais import *
 
 player_animation = [
-    Animation("Assets_DP/Idle.png", 30, True), #0
-    Animation("Assets_DP/Frente.png", 36, False), #1
-    Animation("Assets_DP/Backward.png", 36, False), #2
-    Animation("Assets_DP/Knee.png", 30, False), #3
-    Animation("Assets_DP/Sweep.png", 30, False), #4
-    Animation("Assets_DP/Shoryuken.png", 42, False), #5
-    Animation("Assets_DP/Donkey.png", 48, False), #6
-    Animation("Assets_DP/Fireball.png", 48, False), #7
-    Animation("Assets_DP/Knockdown.png", 48, False), #8
-    Animation("Assets_DP/Down.png", 1, True), #9
-    Animation("Assets_DP/Damage.png", 24, False), #10
-    Animation("Assets_DP/Block.png", 12, False), #11
-    Animation("Assets_DP/Block_Stun.png", 1, True), #12
-    Animation("Assets_DP/Dash.png", 30, False) #13
+    ("Assets_DP/Idle.png", 6, 5, True), #0
+    ("Assets_DP/Frente.png", 6, 6, False), #1
+    ("Assets_DP/Backward.png", 6, 6, False), #2
+    ("Assets_DP/Knee.png", 6, 5, False), #3
+    ("Assets_DP/Sweep.png", 6, 5, False), #4
+    ("Assets_DP/Shoryuken.png", 6, 7, False), #5
+    ("Assets_DP/Donkey.png", 6, 8, False), #6
+    ("Assets_DP/Fireball.png", 6, 8, False), #7
+    ("Assets_DP/Knockdown.png", 6, 8, False), #8
+    ("Assets_DP/Down.png", 1, 1, True), #9
+    ("Assets_DP/Damage.png", 6, 4, False), #10
+    ("Assets_DP/Block.png", 6, 2, False), #11
+    ("Assets_DP/Block_Stun.png", 1, 1, True), #12
+    ("Assets_DP/Dash.png", 6, 5, False) #13
 ]
+
+def novo_animação(tupla) -> Animation:
+    animation_nova = Animation(tupla[0],tupla[1],tupla[2], tupla[3])
+    return animation_nova
+
+    
 
 class AnimationEnum():
 
